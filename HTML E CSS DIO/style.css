@@ -1,0 +1,125 @@
+/* Reset style page */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #faf9f9;
+  font-family: Verdana;
+  width: 900px;
+  margin: auto;
+}
+
+.photo {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+
+  border: 0.2rem solid #555b6e;
+}
+
+header #title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+header .subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+#title,
+.subtitle,
+.post_title {
+  color: #555b6e;
+  margin: 1rem;
+}
+
+/* ===== POSTS ===== */
+article.post {
+  background-color: #fff;
+  width: 100%rem;  
+
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+.post_title {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.post_content {
+  margin: 1rem;
+  color: #555b6e;
+  text-align: center;
+}
+
+.post_content a {
+  text-decoration: none;
+}
+
+.post_content a:hover {
+  color: #eb5e28;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.post_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
+.post_image:hover {
+  transform: translatey(-0.15rem);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin: 1rem;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  margin: 1rem;
+  list-style: none;
+  display: flex;
+}
+
+footer ul li a {
+  text-decoration: none;
+}
+
+footer ul li a 
+.mail,
+.linkedin,
+.github {
+  width: 2rem;
+  height: 2rem;
+}
+
+footer ul li a:hover {
+  transform: translateY(-0.3rem);
+  color: #eb5e28;
+  font-weight: bold;
+  transition: 0.2s;
+}
