@@ -4,9 +4,9 @@
 
 Hey :wave:!
 
-Esse repositório tem com finalidade compartilhar todo a minha progressão no bootcamp ofertado pela [Dio](https://web.dio.me/track/tqi-fullstack-developer).
+Esse repositório tem com finalidade compartilhar todo a minha progressão realizada no bootcamp ofertado pela [Dio](https://web.dio.me/track/tqi-fullstack-developer).
 
-Esse boot camp tem como objetivo as principais stacks:
+Esse boot camp tem como objetivo ensinar as principais stacks:
 
 * ![React Logo](https://img.icons8.com/small/2x/react.png) React
 * ![Java logo](https://img.icons8.com/small/2x/hot-springs.png) Java
@@ -16,3 +16,7 @@ Esse boot camp tem como objetivo as principais stacks:
 * ![CSS logo](https://img.icons8.com/small/2x/css.png) CSS3
 * ![Javascript logo](https://img.icons8.com/small/2x/js.png) Javascript
 * ![QA logo](https://img.icons8.com/small/2x/warranty-card.png) QA
+
+
+
+Até breve! :wave:
