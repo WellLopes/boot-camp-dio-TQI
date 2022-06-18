@@ -15,13 +15,16 @@ body {
   height: 100vh;
   width: 100vw;
   
-  background: #1f363d;
+  background: linear-gradient(-45deg, #353535, #3c6e71, #6c584c, #284b63);
   background-size: 400% 400%;
   
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  animation: 
+    backgroundTransition 8s ease-in-out infinite;
 }
 
 h1 {
@@ -30,41 +33,6 @@ h1 {
   text-transform: uppercase;
   width: max-content;
   letter-spacing: 0.25rem;
-}
-
-h1::before, 
-h1::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-h1::before {
-  background: #1f363d;
-  animation: typewriter var(--typewriterSpeed) steps(27) forwards;
-}
-
-h1::after {
-  width: 0.125rem;
-  background-color: #3e6064;
-  animation: 
-    typewriter var(--typewriterSpeed) steps(27) forwards,
-    blink 1000ms steps(27) infinite;
-}
-
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
 }
 
 h2 {
@@ -90,9 +58,38 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: 0.5s cubic-bezier(0.55, 0.025, 0.675, 0.97);
 }
 
 a:hover {
   color: #1f363d;
   background-color: #ebf7f9;
+}
+
+/* Keyframes */
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes backgroundTransition {
+  0% {
+    background-position: 0% 80%;
+  }
+
+  50% {
+    background-position: 80% 100%;
+  }
+
+  100% {
+    background-position: 0% 90%;
+  }
 }
