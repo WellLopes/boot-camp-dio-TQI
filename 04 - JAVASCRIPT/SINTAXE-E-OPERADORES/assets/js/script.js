@@ -1,25 +1,38 @@
-function reciveNumber() {
-  let n1 = Number(prompt('Digite o primerio valor: '))
-  let n2 = Number(prompt('Digite o segundo valor: '))
-
-  let sumNumber = n1 + n2
-
-  let checkEqual =
-    n1 === n2
-      ? `Os números ${n1} e ${n2} são iguais`
-      : `Os números ${n1} e ${n2} não são iguais`
-
-  if ( sumNumber > 10 && sumNumber < 20) {
-    var checkSumNumber = (`Sua soma é ${sumNumber} que é maior que 10 e menor que 20`)
+function compareNumber(num1, num2) {
+  if (!num1 || !num2) {
+    return 'Digite um número válido'
   }
-  else if (sumNumber < 10) {
-    var checkSumNumber = (`Sua soma é ${sumNumber} que é menor que 10 e menor que 20`)
-  }
-  else {
-    var checkSumNumber = (`Sua soma é ${sumNumber} que é maior que 10 e 20`)
-  } 
 
-  console.log(`${checkEqual}. ${checkSumNumber}`)
+  const firstPhrase = createFirstPhrase(num1, num2)
+  const secondPhrase = createSecondPhrase(num1, num2)
+
+  return `${firstPhrase} ${secondPhrase}`
 }
 
-reciveNumber()
+function createFirstPhrase(num1, num2) {
+  let firstPhrase = `Os números ${num1} e ${num2}`
+  let yesNO = 'não'
+
+  if (num1 === num2) {
+    yesNO = ''
+  }
+
+  return `${firstPhrase} ${yesNO} são iguais.`
+}
+
+function createSecondPhrase(num1, num2) {
+  const sum = num1 + num2
+
+  let compareTen = 'menor'
+  let compareTwenty = 'menor'
+
+  if (sum > 10) {
+    compareTwenty = 'maior'
+  }
+
+  if (sum > 20) {
+    compareTwenty = 'maior'
+  }
+
+  return `Sua soma é ${sum}, que é ${compareTen} do que 10 e ${compareTwenty} do que 20`
+}
