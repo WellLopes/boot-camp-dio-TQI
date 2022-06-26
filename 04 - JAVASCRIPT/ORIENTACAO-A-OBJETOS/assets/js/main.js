@@ -1,82 +1,75 @@
 class ContaBancaria {
-  constructor(agencia, numero, tipo, saldo) {
+  constructor(agencia, numero, tipo) {
     this._agencia = agencia
     this._numero = numero
     this._tipo = tipo
-    this._saldo = saldo
+    this._saldo = 0
   }
   
-  set saldo(number) {
-    this._saldo = number
-  }
-
   get saldo() {
     return this._saldo
   }
+  
+  set saldo(valor) {
+    this._saldo = valor
+  }
 
-  sacar(number) {
-    let saque = this._saldo - number
 
-    if(number > this._saldo) {
-      return `Saldo insuficiente, o valor de: $${number} ultrapassa seu saldo de: $${this._saldo}`
+  sacar(valor) {
+
+    if(valor > this._saldo) {
+      return `Saldo insuficiente.`
     } else {
-      return `Saldo inicial: $${this._saldo}.\nSaque no valor de $${number} realizado com sucesso.\nSaldo final: $${saque}`
+      this._saldo = this._saldo - valor
+      return `Saque realizado com sucesso.`
     }
   }
 
-  depositar(number) {
-    let deposito = this._saldo + number
+  depositar(valor) {
+    this._saldo = this._saldo + valor
     
-    return `Saldo inicial: $${this._saldo}.\nDepósito no valor de $${number} realizado com sucesso.\nSaldo final: $${deposito}`
+    return `Depósito realizado com sucesso.`
   }
 }
 
-// var conta = new ContaBancaria('','','', 10000)
-// console.log(conta.depositar(4738))
-
-class ContaCorrente extends ContaBancaria {
-  constructor(cartaoCredito,type = 'conta corrente') {
+class ContaCorrente extends ContaBancaria{
+  constructor(agencia, numero, cartaoCredito) {
+    super(agencia, numero)
+    this._tipo = 'corrente'
     this._cartaoCredito = cartaoCredito
-  }
-
-  set cartaoCredito(number) {
-    this.this.cartaoCredito = number
   }
 
   get cartaoCredito(){
     return this._cartaoCredito
   }
-}
-
-class ContaPoupanca extends ContaBancaria {
-
-}
-
-class ContaUniversitaria extends ContaBancaria {
-  constructor (saldo) {
-    super(saldo)
+  
+  set cartaoCredito(valor) {
+    this._cartaoCredito = valor
   }
 
-  saque(number) {
-    console.log(this._saldo)
-    let saque = this._saldo - number
-    
-    if(number > 500) {
-      return `Saque no valor de: $${number} inválido.\nSaques disponíveis apenas abaixo de: $500`
+}
+
+class ContaPoupanca extends ContaBancaria{
+  constructor(agencia, numero) {
+    super(agencia, numero)
+    this._tipo = 'poupança'
+  }
+}
+
+class ContaUniversitaria extends ContaBancaria{
+  constructor(agencia, numero) {
+    super(agencia, numero)
+    this._tipo = 'universitária'
+  }
+
+  sacar(valor) {
+    if(this._saldo < valor) {
+      return `Saldo insuficiente`
+    } else if(valor > 500) {
+      return `Saque inválido, tente um valor abaixo de $500`
     } else {
-      return `Saldo inicial: $${this._saldo}.\nSaque no valor de $${number} realizado com sucesso.\nSaldo final: $${saque}`
+      this._saldo = this._saldo - valor
+      return `Saque realizado com sucesso.`
     }
   }
 }
-
-var contaUniver = new ContaUniversitaria(10000)
-console.log(contaUniver.saque(473))
-// Crie a classe ContaBancaria, que possui os parâmetros agencia, numero, tipo e saldo;
-// Dentro de ContaBancaria, construa o getter e o setter de saldo;
-// Dentro de ContaBancaria, crie os métodos sacar e depositar;
-// Crie uma classe-filha chamada ContaCorrente que herda todos esses parâmetros e ainda possua o parâmetro cartaoCredito;
-// Ainda em ContaCorrente, construa o getter e o setter de cartaoCredito;
-// Ainda em ContaCorrente, faça com que o tipo seja 'conta corrente' por padrão;
-// Crie uma classe-filha chamada ContaPoupanca que herda todos os parâmetros de ContaBancaria;
-// Crie uma classe-filha chamada ContaUniversitaria que herda todos os parâmetros de ContaBancaria;
-// Faça com que o método saque de ContaUniversitaria apenas seja capaz de sacar valores menores que 500 reais.
