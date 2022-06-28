@@ -14,11 +14,13 @@ function changeMode() {
     getBody.classList.add('dark-mode')
     myBtn.classList.add('dark-mode')
     getFooter.classList.add('dark-mode')
-    getH1.textContent = 'Light Mode Off'
+    getH1.textContent = 'Dark Mode ON'
+    myBtn.textContent = 'Light Mode'
   } else {
     getBody.classList.remove('dark-mode')
     myBtn.classList.remove('dark-mode')
     getFooter.classList.remove('dark-mode')
     getH1.textContent = 'Light Mode ON'
+    myBtn.textContent = 'Dark Mode'
   }
 }
