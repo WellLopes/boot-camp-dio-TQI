@@ -8,14 +8,14 @@ Esse repositório tem com finalidade compartilhar todo a minha progressão reali
 
 Esse boot camp tem como objetivo ensinar as principais stacks:
 
-* ![React Logo](https://img.icons8.com/small/2x/react.png) React
-* ![Java logo](https://img.icons8.com/small/2x/hot-springs.png) Java
-* ![Sql logo](https://img.icons8.com/small/2x/data-configuration.png) SQL
-* ![Spring logo](https://img.icons8.com/small/2x/spring.png) Spring Framework
-* ![Html logo](https://img.icons8.com/small/2x/html.png) HTML5
-* ![CSS logo](https://img.icons8.com/small/2x/css.png) CSS3
-* ![Javascript logo](https://img.icons8.com/small/2x/js.png) Javascript
-* ![QA logo](https://img.icons8.com/small/2x/warranty-card.png) QA
+* ![React Logo](assets/react.png) React
+* ![Java logo](assets/java.png) Java
+* ![Sql logo](assets/mysql.png) MySQL
+* ![Spring logo](assets/spring.png) Spring Framework
+* ![Html logo](assets/html5.png) HTML5
+* ![CSS logo](assets/css3.png) CSS3
+* ![Javascript logo](assets/js.png) Javascript
+* ![QA logo](assets/qa.png) QA
 
 
 
