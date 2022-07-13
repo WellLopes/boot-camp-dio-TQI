@@ -1,11 +1,16 @@
+import { getElementError } from '@testing-library/react';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../Ifoodcounter/Ifoodcounter.css';
 
 function IfoodCounter() {
 
   const [value, setValue] = useState(1)
   const [buttonStyle, setButtonStyle] = useState('counter-button-minus-active')
+
+  useEffect(() => {
+    console.log(`o estilo do botão atual é ${buttonStyle}`)
+  },[buttonStyle])
 
   function down() {
 
@@ -27,11 +32,24 @@ function IfoodCounter() {
     <div className='countex-wrapper'>
       <button 
         className={buttonStyle}
-        onClick={down}>-</button>
+        onClick={down}
+      >
+        -
+      </button>
       <p>{value}</p>
       <button 
         onClick={up}
-        className='counter-button-plus-active'>+</button>
+        className='counter-button-plus-active'
+      >
+        +
+      </button>
+      
+      <button id='moeda'>
+        12,00
+      </button>
+
+
+
     </div>
   )
 }
